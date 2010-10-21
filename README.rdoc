@@ -1,0 +1,7 @@
+= Advanced Redmine Notifications
+
+E-mail notification of issues due date you are involved in (Assignee, Author, Watcher)
+
+= Install
+
+script/plugin install git://github.com/alvila/redmine_reminder.git

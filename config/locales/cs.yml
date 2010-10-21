@@ -1,0 +1,17 @@
+cs:
+  # Text direction: Left-to-Right (ltr) or Right-to-Left (rtl)
+  mail_reminder_all_day1: "dne"
+  mail_reminder_all_day2: "dnů"
+  mail_reminder_all_day5: "dní"
+  mail_subject_reminder_all1: "{{count}} úkol má termín během {{days}} {{day}}"
+  mail_body_reminder_auth1: "{{count}} úkol, který jste vytvořil má termín během {{days}} {{day}}:"
+  mail_body_reminder_assigned1: "{{count}} úkol, který máte přiřazen má termín během {{days}} {{day}}:"
+  mail_body_reminder_watched1: "{{count}} úkol, který sledujete má termín během {{days}} {{day}}:"
+  mail_subject_reminder_all2: "{{count}} úkoly mají termín během {{days}} {{day}}"
+  mail_body_reminder_auth2: "{{count}} úkoly, které jste vytvořil mají termín během {{days}} {{day}}:"
+  mail_body_reminder_assigned2: "{{count}} úkoly, které máte přiřazeny mají termín během {{days}} {{day}}:"
+  mail_body_reminder_watched2: "{{count}} úkoly, které sledujete mají termín během {{days}} {{day}}:"
+  mail_subject_reminder_all5: "{{count}} úkolů má termín během {{days}} {{day}}"
+  mail_body_reminder_auth5: "{{count}} úkolů, které jste vytvořil má termín během {{days}} {{day}}:"
+  mail_body_reminder_assigned5: "{{count}} úkolů, které máte přiřazeny má termín během {{days}} {{day}}:"
+  mail_body_reminder_watched5: "{{count}} úkolů, které sledujete má termín během {{days}} {{day}}:"

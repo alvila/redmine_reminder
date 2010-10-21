@@ -1,0 +1,38 @@
+<%
+day_tag=[l(:mail_reminder_all_day1),l(:mail_reminder_all_day2),l(:mail_reminder_all_day2),l(:mail_reminder_all_day2),l(:mail_reminder_all_day5)]
+if @assigned_issues.length > 0 
+case @assigned_issues.length
+  when 1 then -%><%= l(:mail_body_reminder_assigned1, :count => @assigned_issues.size, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]  ) %>
+<%  when 2..4 then -%><%= l(:mail_body_reminder_assigned2, :count => @assigned_issues.size, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]  ) %>
+<%  else -%><%= l(:mail_body_reminder_assigned5, :count => @assigned_issues.size, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]  ) %>
+<% end -%>
+      
+<% @assigned_issues.each do |issue| -%>
+* <%= "#{issue.project} - #{issue.tracker} ##{issue.id}: #{issue.subject}" %>
+<% end -%>
+<% end
+if @auth_issues.length > 0 
+case @auth_issues.length
+  when 1 then -%> <%= l(:mail_body_reminder_auth1, :count => @auth_issues.size, :days => @days, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]) %>
+<% when 2..4 then -%> <%= l(:mail_body_reminder_auth2, :count => @auth_issues.size, :days => @days, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]) %>
+<% else -%> <%= l(:mail_body_reminder_auth5, :count => @auth_issues.size, :days => @days, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]) %>
+<% end -%>
+  
+<% @auth_issues.each do |issue| -%>
+* <%= "#{issue.project} - #{issue.tracker} ##{issue.id}: #{issue.subject}" %>
+<% end -%>
+<% end
+if @watched_issues.length > 0 
+case @watched_issues.length
+  when 1 then -%> <%= l(:mail_body_reminder_watched1, :count => @watched_issues.size, :days => @days, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]) %>
+<% when 2..4 then -%> <%= l(:mail_body_reminder_watched2, :count => @watched_issues.size, :days => @days, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]) %>
+<% else -%> <%= l(:mail_body_reminder_watched5, :count => @watched_issues.size, :days => @days, :days => @days, :day=>day_tag[@days>4 ? 5 : @days-1]) %>
+<% end -%>
+
+
+<% @watched_issues.each do |issue| -%>
+* <%= "#{issue.project} - #{issue.tracker} ##{issue.id}: #{issue.subject}" %>
+<% end -%>
+<% end -%>
+
+<%= @issues_url %>
