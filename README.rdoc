@@ -5,3 +5,15 @@ E-mail notification of issues due date you are involved in (Assignee, Author, Wa
 = Install
 
 script/plugin install git://github.com/alvila/redmine_reminder.git
+
+= Usage
+
+The plugin runs as a rake task so you have to set it up in cron or task sheduler
+
+1 0 * * *       root    cd /opt/redmine && rake redmine:send_reminders_all days=1 project=test tracker=1 RAILS_ENV=production
+
+There are 3 options you can set up
+  * days     => number of days to remind about (defaults to 7)
+  * tracker  => id of tracker (defaults to all trackers)
+  * project  => id or identifier of project (defaults to all projects)
+
