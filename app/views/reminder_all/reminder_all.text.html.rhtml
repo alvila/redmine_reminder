@@ -9,7 +9,7 @@ case @assigned_issues.length
 
 <ul>
 <% @assigned_issues.each do |issue| -%>
-  <li><%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
+  <li><%=h issue.due_date %> - <%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
 <% end -%>
 </ul>
 <% end
@@ -22,7 +22,7 @@ case @auth_issues.length
 
 <ul>
 <% @auth_issues.each do |issue| -%>
-  <li><%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
+  <li><%=h issue.due_date %> - <%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
 <% end -%>
 </ul>
 <% end
@@ -35,7 +35,7 @@ case @watched_issues.length
 
 <ul>
 <% @watched_issues.each do |issue| -%>
-  <li><%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
+  <li><%=h issue.due_date %> - <%=h issue.project %> - <%=link_to("#{issue.tracker} ##{issue.id}", :controller => 'issues', :action => 'show', :id => issue, :only_path => false)%>: <%=h issue.subject %></li>
 <% end -%>
 </ul>
 <% end -%>

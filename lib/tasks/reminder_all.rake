@@ -130,6 +130,15 @@ class Reminder_all < Mailer
 	  sent_issues += issues
 	end	
       else
+	if assigned_tasks.length > 0 then
+		assigned_tasks.sort! {|a,b| b.due_date <=> a.due_date }
+	end
+	if auth_tasks.length > 0 then
+		auth_tasks.sort! {|a,b| b.due_date <=> a.due_date }
+	end
+	if watched_tasks.length > 0 then
+		watched_tasks.sort! {|a,b| b.due_date <=> a.due_date }
+	end
 	deliver_reminder_all(previous_user, assigned_tasks, auth_tasks, watched_tasks, days) unless previous_user.nil?
 	watched_tasks.clear
 	auth_tasks.clear
