@@ -24,7 +24,7 @@ Available options:
   * project  => id or identifier of project (defaults to all projects)
 
 Example:
-  rake redmine:send_reminders days=7 RAILS_ENV="production"
+  rake redmine:send_reminders_all days=7 RAILS_ENV="production"
 END_DESC
 require File.expand_path(File.dirname(__FILE__) + "/../../../../../config/environment")
 require "mailer"
@@ -45,7 +45,7 @@ class Reminder_all < Mailer
 	 :watched_issues => watched_issues,
          :days => days,
          :issues_url => url_for(:controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => user.id, :sort_key => 'due_date', :sort_order => 'asc')
-    render_multipart('reminder_all', body)
+    render_multipart('reminder_all', body) if (assigned_issues+auth_issues+watched_issues).uniq.size>0
   end
   def self.reminders_all(options={})
     days = options[:days] || 7
@@ -171,3 +171,4 @@ namespace :redmine do
     Reminder_all.reminders_all(options)
   end
 end
+
